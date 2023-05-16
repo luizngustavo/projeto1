@@ -4,9 +4,8 @@ import Produtos from "./componentes/Produtos";
 function App  ()  {
   return (
 
-  <div className="Divbar"><Nav/></div>,
+  <div className="Divbar"><Nav/></div>
 
-  <div className="produtosHome"><Produtos/></div>
 
   )
 };
