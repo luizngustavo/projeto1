@@ -1,13 +1,13 @@
 import Nav from "./componentes/Nav";
 import Produtos from "./componentes/Produtos";
 
-function App  ()  {
+function App() {
   return (
-
-  <div className="Divbar"><Nav/></div>
-
-
-  )
-};
+    <>
+      <Nav />
+      <Produtos/>
+      </>
+  );
+}
 
 export default App;
