@@ -7,7 +7,6 @@ import Carrinho from "./componentes/Carrinho";
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
-  // Função para adicionar um item ao carrinho
   const addToCart = (item) => {
     setCartItems([...cartItems, item]);
   };
@@ -17,7 +16,7 @@ function App() {
       <Nav cartItems={cartItems} />
       <Routes>
         <Route path="/" element={<Produtos addToCart={addToCart} />} />
-        <Route path="/carrinho" element={<Carrinho cartItems={cartItems} />} />
+        <Route path="/carrinho" element={<Carrinho cartItems={cartItems} setCartItems={setCartItems} />} />
       </Routes>
     </Router>
   );

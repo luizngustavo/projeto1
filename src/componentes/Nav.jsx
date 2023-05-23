@@ -6,12 +6,12 @@ function Nav({ cartItems }) {
     <ul className="nav nav-fill">
       <li className="nav-item">
         <Link className="nav-link" to="/">
-          Link nav muito mais longo
+          Página Incial
         </Link>
       </li>
       <li className="nav-item">
         <Link className="nav-link" to="/">
-          Link
+          Produtos
         </Link>
       </li>
       <li className="nav-item">

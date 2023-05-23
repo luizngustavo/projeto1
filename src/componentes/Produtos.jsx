@@ -2,7 +2,12 @@ import React from 'react';
 
 function Produtos({ addToCart }) {
   const handleAddToCart = () => {
-    const item = { id: 1, name: 'Card title' }; // Exemplo de item a ser adicionado ao carrinho
+    const item = {
+      id: 1,
+      name: 'Placa de Vídeo RTX 3060 Ti 1-Click OC Galax NVIDIA GeForce, 8GB, GDDR6, LHR, DLSS, Ray Tracing, Preto R$',
+      price: 2000,
+      image: 'https://images.kabum.com.br/produtos/fotos/404448/placa-de-video-rtx-3060-1-click-oc-pci-e-galax-8-gb-gddr6-128bit-36nsl8md6occ_1670960050_gg.jpg'
+    };
     addToCart(item);
   };
 
@@ -18,7 +23,7 @@ function Produtos({ addToCart }) {
               alt="..."
             />
             <div className="card-body">
-              <h5 className="card-title">Card title</h5>
+              <h5 className="card-title">Placa de Vídeo RTX 3060 Ti 1-Click OC Galax NVIDIA GeForce, 8GB, GDDR6, LHR, DLSS, Ray Tracing, Preto</h5>
               <p className="card-text">
                 Some quick example text to build on the card title and make up the bulk of the card's content.
               </p>
