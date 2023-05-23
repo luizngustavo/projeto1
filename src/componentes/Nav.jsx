@@ -1,25 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Nav({ cartItems }) {
   return (
     <ul className="nav nav-fill">
       <li className="nav-item">
-        <a className="nav-link" href="#">
+        <Link className="nav-link" to="/">
           Link nav muito mais longo
-        </a>
+        </Link>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#">
+        <Link className="nav-link" to="/">
           Link
-        </a>
+        </Link>
       </li>
       <li className="nav-item">
-        <a className="nav-link active" href="#">
+        <Link className="nav-link active" to="/carrinho">
           Carrinho ({cartItems.length})
-        </a>
+        </Link>
       </li>
     </ul>
   );
 }
 
 export default Nav;
+
