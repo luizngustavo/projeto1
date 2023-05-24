@@ -1,4 +1,5 @@
 import React from 'react';
+import "../../src/carrinhostyle.css";
 
 function Carrinho({ cartItems, setCartItems }) {
   const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
@@ -9,7 +10,7 @@ function Carrinho({ cartItems, setCartItems }) {
   };
 
   return (
-    <div>
+    <div className='carrinho-container'>
       <h2>Carrinho</h2>
       {cartItems.length === 0 ? (
         <p>O carrinho está vazio.</p>

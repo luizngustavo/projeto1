@@ -1,0 +1,32 @@
+.carrinho-container {
+    margin-top: 60px; /* Espaço entre a navbar e o carrinho */
+    border: 1px solid #0e0e0e; /* Borda com cor cinza (#ccc) */
+    padding: 10px; /* Espaçamento interno */
+    background-color: rgb(155, 155, 151);
+    
+  }
+  
+  .carrinho-container h2 {
+    margin-bottom: 10px; /* Espaço abaixo do título */
+  }
+  
+  .carrinho-container ul {
+    list-style: none; /* Remover marcadores da lista */
+    padding: 0;
+  }
+  
+  .carrinho-container li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Espaço entre os itens */
+  }
+  
+  .carrinho-container li img {
+    margin-right: 10px; /* Espaço entre a imagem e o texto */
+  }
+  
+  .carrinho-container button {
+    margin-left: 30px;
+    background-color: red;
+     /* Espaço entre o texto e o botão */
+  }
