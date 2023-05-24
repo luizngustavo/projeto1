@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Nav({ cartItems }) {
   return (
-    <ul className="nav nav-fill">
+    <ul className="nav nav-fill nav-black">
       <li className="nav-item">
         <Link className="nav-link" to="/">
           Página Incial
@@ -11,7 +11,7 @@ function Nav({ cartItems }) {
       </li>
       <li className="nav-item">
         <Link className="nav-link" to="/">
-          Produtos
+          Contato
         </Link>
       </li>
       <li className="nav-item">
