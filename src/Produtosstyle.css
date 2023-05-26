@@ -1,0 +1,30 @@
+.custom-card {
+  margin-top: 100px;
+  max-height: 600px; /* Defina a altura máxima desejada para o card */
+  border: 1px solid #ddd; /* Adiciona uma borda ao card */
+  border-radius: 4px; /* Adiciona bordas arredondadas ao card */
+  padding: 10px; /* Adiciona espaçamento interno ao card */
+  margin-bottom: 20px; /* Adiciona espaçamento entre os cards */
+}
+
+.custom-card img {
+  width: 100%; /* Define a largura da imagem para ocupar 100% do contêiner */
+  height: 300px; /* Define a altura desejada para a imagem */
+}
+
+.card-title {
+  display: -webkit-box; /* Defina o modo de exibição como flexível para que o texto possa ser cortado com reticências */
+  -webkit-box-orient: vertical; /* Define a orientação vertical do contêiner flexível */
+  -webkit-line-clamp: 2; /* Limita o número de linhas a serem exibidas */
+  overflow: hidden; /* Esconde o conteúdo que excede o espaço disponível */
+  text-overflow: ellipsis; /* Adiciona reticências (...) quando o texto é cortado */
+  color: black; /* Define a cor do título como preta */
+  text-decoration: none; /* Remove o sublinhado do link */
+}
+
+.card-text {
+  overflow: hidden; /* Esconde o conteúdo que excede o espaço disponível */
+  text-overflow: ellipsis; /* Adiciona reticências (...) quando o texto é cortado */
+  white-space: nowrap; /* Impede que o texto seja quebrado em várias linhas */
+}
+

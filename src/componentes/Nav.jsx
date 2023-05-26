@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 
 function Nav({ cartItems }) {
   return (
-    <ul className="nav nav-fill nav-black">
+    <ul className="nav nav-fill navbar-dark bg-black mb-2">
       <li className="nav-item">
         <Link className="nav-link" to="/">
-          Página Incial
+          Página Inicial
         </Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link" to="/">
-          Contato
+        <Link className="nav-link" to="/produtos">
+          Produtos
         </Link>
       </li>
       <li className="nav-item">
@@ -24,4 +24,5 @@ function Nav({ cartItems }) {
 }
 
 export default Nav;
+
 

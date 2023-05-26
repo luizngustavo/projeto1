@@ -1,41 +1,60 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-function Produtos({ addToCart }) {
-  const handleAddToCart = () => {
-    const item = {
-      id: 1,
-      name: 'Placa de Vídeo RTX 3060 Ti 1-Click OC Galax NVIDIA GeForce, 8GB, GDDR6, LHR, DLSS, Ray Tracing, Preto R$',
-      price: 2000,
-      image: 'https://images.kabum.com.br/produtos/fotos/404448/placa-de-video-rtx-3060-1-click-oc-pci-e-galax-8-gb-gddr6-128bit-36nsl8md6occ_1670960050_gg.jpg'
-    };
-    addToCart(item);
-  };
+import { pool } from '../DB/db.js';
+
+
+async function getProducts() {
+  const client = await pool.connect();
+  try {
+    const res = await client.query('SELECT * FROM Products');
+    return res.rows;
+  } catch(err) {
+    console.error(err);
+  } finally {
+    client.release();
+  }
+}
+
+function Products({ addToCart }) {
+  const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    getProducts()
+      .then((data) => {
+        setProducts(data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setIsLoading(false);
+      });
+  }, []);
+
+  if (isLoading) {
+    return <div>Carregando...</div>;
+  }
+
+  if (error) {
+    return <div>Erro ao carregar produtos.</div>;
+  }
 
   return (
-    <div className="col-9">
-      <div className="row justify-content-center text-center">
-        <div className="col-3"></div>
-        <div className="col-3">
-          <div className="card">
-            <img
-              src="https://images.kabum.com.br/produtos/fotos/404448/placa-de-video-rtx-3060-1-click-oc-pci-e-galax-8-gb-gddr6-128bit-36nsl8md6occ_1670960050_gg.jpg"
-              className="card-img-top"
-              alt="..."
-            />
-            <div className="card-body">
-              <h5 className="card-title">Placa de Vídeo RTX 3060 Ti 1-Click OC Galax NVIDIA GeForce, 8GB, GDDR6, LHR, DLSS, Ray Tracing, Preto</h5>
-              <p className="card-text">
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </p>
-              <button className="btn btn-primary" onClick={handleAddToCart}>
-                Add to Cart
-              </button>
-            </div>
+    <div>
+      <h2>Produtos</h2>
+      <div className="products-container">
+        {products.map((product) => (
+          <div key={product.id} className="custom-card">
+            <h3 className="card-title">{product.name}</h3>
+            <p className="card-text">{product.description}</p>
+            <p>Preço: R$ {(product.price).toFixed(2)}</p>
+            <button onClick={() => addToCart(product)}>Adicionar ao Carrinho</button>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );
 }
 
-export default Produtos;
+export default Products;

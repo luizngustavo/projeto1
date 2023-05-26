@@ -1,7 +1,7 @@
 .carrinho-container {
   display: flex; /* Exibe os elementos em linha */
   margin-top: 60px; /* Espaço entre a navbar e o carrinho */
-  border: 1px solid #0e0e0e; /* Borda com cor cinza (#ccc) */
+  border-radius: 15px 50px 30px #0e0e0e; /* Borda com cor cinza (#ccc) */
   padding: 10px; /* Espaçamento interno */
   background-color: rgb(155, 155, 151);
 }
@@ -43,4 +43,5 @@
 }
 
 .btn-finalizar {
-  display: block; /* O botão oc
+  display: block;
+}
