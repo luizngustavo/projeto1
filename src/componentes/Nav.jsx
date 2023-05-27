@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 function Nav({ cartItems }) {
   return (
@@ -19,10 +19,13 @@ function Nav({ cartItems }) {
           Carrinho ({cartItems.length})
         </Link>
       </li>
+      <li className="nav-item">
+        <Link className="nav-link active" to="/productManagement">
+          Gerenciamento de Produtos
+        </Link>
+      </li>
     </ul>
   );
 }
 
 export default Nav;
-
-

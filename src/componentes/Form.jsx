@@ -1,0 +1,35 @@
+<form onSubmit={handleSubmit}>
+  <input
+    type="text"
+    name="id"
+    value={newProduct.id}
+    onChange={handleInputChange}
+    placeholder="ID"
+    required
+  />
+  <input
+    type="text"
+    name="name"
+    value={newProduct.name}
+    onChange={handleInputChange}
+    placeholder="Nome"
+    required
+  />
+  <input
+    type="text"
+    name="description"
+    value={newProduct.description}
+    onChange={handleInputChange}
+    placeholder="Descrição"
+    required
+  />
+  <input
+    type="number"
+    name="price"
+    value={newProduct.price}
+    onChange={handleInputChange}
+    placeholder="Preço"
+    required
+  />
+  <button type="submit">Adicionar Produto</button>
+</form>;

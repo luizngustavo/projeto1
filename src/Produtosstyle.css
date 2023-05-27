@@ -8,7 +8,7 @@
 }
 
 .custom-card img {
-  width: 100%; /* Define a largura da imagem para ocupar 100% do contêiner */
+  width: 300px; /* Define a largura da imagem para ocupar 100% do contêiner */
   height: 300px; /* Define a altura desejada para a imagem */
 }
 
@@ -28,3 +28,9 @@
   white-space: nowrap; /* Impede que o texto seja quebrado em várias linhas */
 }
 
+.products-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px; /* para adicionar espaço entre os cards */
+}

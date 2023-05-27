@@ -1,4 +1,4 @@
-const { pool } = require('./db.js');
+import { pool } from "./db.js";
 
 const insertProducts = (client) => {
   client.query(
@@ -13,9 +13,9 @@ const insertProducts = (client) => {
     `,
     (err, res) => {
       if (err) {
-        console.error('Erro ao inserir os produtos:', err);
+        console.error("Erro ao inserir os produtos:", err);
       } else {
-        console.log('Produtos inseridos com sucesso');
+        console.log("Produtos inseridos com sucesso");
       }
 
       client.release(); // Libera o cliente para o pool
@@ -26,7 +26,7 @@ const insertProducts = (client) => {
 
 pool.connect((err, client) => {
   if (err) {
-    return console.error('Erro ao obter cliente do pool', err);
+    return console.error("Erro ao obter cliente do pool", err);
   }
 
   client.query(
@@ -40,9 +40,9 @@ pool.connect((err, client) => {
     `,
     (err, res) => {
       if (err) {
-        console.error('Erro ao criar a tabela:', err);
+        console.error("Erro ao criar a tabela:", err);
       } else {
-        console.log('Tabela criada com sucesso');
+        console.log("Tabela criada com sucesso");
         insertProducts(client); // Passa o cliente para a função de inserção de produtos
       }
     }
